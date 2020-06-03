@@ -17,5 +17,5 @@ The purpose of this Script to to aid in Downloading the Amazing Collection of Mi
 * NOTE: This Script will move the files above into /wallpapers for you automatically to avoid this issue
 
 ## Credits ##
-* <a href="https://twitter.com/RannySnice">Ranny Snice</a>
-* <a href="https://github.com/MiSTer-devel/Main_MiSTer/wiki">Sorgelig</a>
+* <a href="https://twitter.com/RannySnice" target="_blank">Ranny Snice</a>
+* <a href="https://github.com/MiSTer-devel/Main_MiSTer/wiki" target="_blank">Sorgelig</a>
