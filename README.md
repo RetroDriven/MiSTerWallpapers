@@ -21,3 +21,6 @@ The purpose of this Script to to aid in Downloading the Amazing Collection of Mi
 ## Credits ##
 * <a href="https://twitter.com/RannySnice" target="_blank">Ranny Snice</a>
 * <a href="https://github.com/MiSTer-devel/Main_MiSTer/wiki" target="_blank">Sorgelig</a>
+
+## Contributions ##
+* Please reach out to me via GitHub or Twitter if you'd like to add your MiSTer Wallpapers for the Script to download
