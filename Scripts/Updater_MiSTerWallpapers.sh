@@ -28,6 +28,13 @@ MAIN_URL="https://www.retrodriven.appboxes.co"
 #Wallpapers URL
 WALLPAPERS_URL="https://www.retrodriven.appboxes.co/MiSTerWallpapers/"
 
+#=========   USER OPTIONS   =========
+
+#Choose if you'd like to manage the Wallpapers that appear on your MiSTer Menu
+#Set to "False" if you'd like your MiSTer to randomly select a Wallpaper from everything downloaded
+#Set to "True" if you'd like top manually manage/copy from /wallpapers/subfolders to /wallpapers 
+SELF_MANAGED="False"
+
 #========= DO NOT CHANGE BELOW =========
 
 TIMESTAMP=`date "+%m-%d-%Y @ %I:%M%P"`
@@ -87,7 +94,7 @@ esac
 RetroDriven_Banner(){
 echo
 echo " ------------------------------------------------------------------------"
-echo "|                   Ranny Snice MiSTer Wallpapers v1.0                   |"
+echo "|                         MiSTer Wallpapers v1.0                         |"
 echo "|                         powered by RetroDriven                         |"
 echo " ------------------------------------------------------------------------"
 sleep 3
@@ -104,7 +111,7 @@ Download_Wallpapers(){
 
 	#Make Directories if needed
 	mkdir -p "/media/fat/wallpapers"
-    	cd "/media/fat/wallpapers"
+    cd "/media/fat/wallpapers"
 
 	#Rename and move menu.jpg/png in root
 	if [ -f /media/fat/menu.jpg ]; then
@@ -117,12 +124,20 @@ Download_Wallpapers(){
 
     #Wallpapers Downloading
 	echo
-	echo "Checking Existing MiSTer Wallpapers for Updates/New Files......"
+	echo "Checking Existing MiSTer Wallpapers by $ARTIST for Updates/New Files......"
 	echo
 	
+		if [ $SELF_MANAGED == "True" ];then
     	#Sync Files
     	lftp "$WALLPAPERS_URL" -e "mirror -p -P 25 --exclude-glob *DS_Store --ignore-time --verbose=1 --log="$LOGS_PATH/Wallpaper_Downloads.txt"; quit"
-    
+		fi
+
+		if [ $SELF_MANAGED != "True" ];then
+    	#Sync Files
+		WALLPAPERS_URL="https://www.retrodriven.appboxes.co/MiSTerWallpapers/$SUB_FOLDER/"
+    	lftp "$WALLPAPERS_URL" -e "mirror -p -P 25 --exclude-glob *DS_Store --ignore-time --verbose=1 --log="$LOGS_PATH/Wallpaper_Downloads.txt"; quit"
+		fi
+
 	sleep 1
     clear 	
 }
@@ -161,13 +176,17 @@ if [ ! -f ~/.lftp/rc ]; then
 fi
 
 #Download Wallpapers
-Download_Wallpapers
+	#Ranny Snice
+	ARTIST="Ranny Snice"
+	SUB_FOLDER="snice"
+	Download_Wallpapers $SELF_MANAGED $ARTIST $SUB_FOLDER
 
 echo
 
 #Display Footer
 Footer
+echo "Wallpapers designed and provided by: Ranny Snice"
+echo
 echo "Wallpaper Collection located here: /media/fat/wallpapers"
-echo "Downloaded Log Files are located here: $LOGS_PATH"
 
 echo

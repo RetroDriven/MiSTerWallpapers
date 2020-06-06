@@ -6,11 +6,13 @@ The purpose of this Script to to aid in Downloading the Amazing Collection of Mi
 <a href="http://retrodriven-nextcloud.cloud.seedboxes.cc/s/MiSTerWallpapers_Updater/download"> Script Updater Download </a>
 
 ## Script Usage ##
-* Download the ZIP file above and Extract/Copy <b>Update_MiSTerWallpapers.sh</b> to your Scripts Folder on your MiSTer SD Card(typically /media/fat/Scripts).
+* Download the ZIP file above and Extract/Copy <b>Update_MiSTerWallpapers.sh</b> and <b>Update_MiSTerWallpapers.ini</b> to your Scripts Folder on your MiSTer SD Card(/media/fat/Scripts).
 * Simply run <b>Update_MiSTerWallpapers.sh</b> via MiSTer Scripts Menu to Download/Update the Wallpapers Collection.
+* Optional: Changing the <b>Update_MiSTerWallpapers.ini</b> file is optional based on your setup/needs.
 
-## Changing Menu Backgrounds ##
-* Copy/Move any/all Wallpapers that you' like from /wallpapers/snice to the root /wallpapers folder
+## Changing Menu Backgrounds via Managed Mode ##
+* Change the INI option SELF_MANAGED="False" to SELF_MANAGED="True"
+* Copy any/all Wallpapers that you' like from /wallpapers/snice to the root /wallpapers folder
 * Doing so will Randomly select a Wallpaper image to display
 * NOTE: You may need to Press F1 to use the Wallpaper Image
 * NOTE: If you have menu.jpg or menu.png in the root of your SD Card the Wallpapers will not work
