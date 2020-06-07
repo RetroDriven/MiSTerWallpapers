@@ -6,9 +6,9 @@ The purpose of this Script to to aid in Downloading the Amazing Collection of Mi
 <a href="http://retrodriven-nextcloud.cloud.seedboxes.cc/s/MiSTerWallpapers_Updater/download"> Script Updater Download </a>
 
 ## Script Usage ##
-* Download the ZIP file above and Extract/Copy <b>Update_MiSTerWallpapers.sh</b> and <b>Update_MiSTerWallpapers.ini</b> to your Scripts Folder on your MiSTer SD Card(/media/fat/Scripts).
-* Simply run <b>Update_MiSTerWallpapers.sh</b> via MiSTer Scripts Menu to Download/Update the Wallpapers Collection.
-* Optional: Changing the <b>Update_MiSTerWallpapers.ini</b> file is optional based on your setup/needs.
+* Download the ZIP file above and Extract/Copy <b>Update_MiSTerWallpapers.sh</b> and <b>Update_MiSTerWallpapers.ini</b> to your Scripts Folder on your MiSTer SD Card(/media/fat/Scripts)
+* Simply run <b>Update_MiSTerWallpapers.sh</b> via MiSTer Scripts Menu to Download/Update the Wallpapers Collection
+* Optional: Changing the <b>Update_MiSTerWallpapers.ini</b> file is optional based on your setup/needs
 
 ## Changing Menu Backgrounds via Managed Mode ##
 * Change the INI option SELF_MANAGED="False" to SELF_MANAGED="True"
@@ -22,6 +22,8 @@ The purpose of this Script to to aid in Downloading the Amazing Collection of Mi
 * You can add Wallpapers that you do not want to Download to a Blacklist
 * Open the <b>Update_MiSTerWallpapers.ini</b> file and add in the Case Sensitive Filename Keywords
 * NOTE: The list is separated by space so only use part of the word if it's more than one word
+* NOTE: The Script will not Delete the Blacklisted Wallpapers if you have already Downloaded before adding them to the Blacklist. Once they manually deleted and Blacklisted they wil not be downloaded going forward
+
 * EXAMPLE: BLACKLIST="Powerpuff Bowsette Vampire"
 
 ## Credits ##
