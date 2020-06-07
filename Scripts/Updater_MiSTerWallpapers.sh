@@ -18,6 +18,7 @@
 # You can download the latest version of this script from:
 # https://github.com/RetroDriven/MiSTerWallpapers
 
+# v1.1 - Added BLACKLIST Option for Filtering out Wallpapers you wish to skip Downloading
 # v1.0 - Initial MiSTerWallpapers Script
 
 #=========   URL OPTIONS   =========
@@ -34,6 +35,11 @@ WALLPAPERS_URL="https://www.retrodriven.appboxes.co/MiSTerWallpapers/"
 #Set to "False" if you'd like your MiSTer to randomly select a Wallpaper from everything downloaded
 #Set to "True" if you'd like top manually manage/copy from /wallpapers/subfolders to /wallpapers 
 SELF_MANAGED="False"
+
+#Case Sensitive Keywords to Skip Downloading Wallpapers that you do not want
+#NOTE: The list is separated by space so only use part of the word if it's more than one word
+#EXAMPLE: BLACKLIST="Powerpuff Bowsette Vampire"
+BLACKLIST=""
 
 #========= DO NOT CHANGE BELOW =========
 
@@ -94,7 +100,7 @@ esac
 RetroDriven_Banner(){
 echo
 echo " ------------------------------------------------------------------------"
-echo "|                         MiSTer Wallpapers v1.0                         |"
+echo "|                         MiSTer Wallpapers v1.1                         |"
 echo "|                         powered by RetroDriven                         |"
 echo " ------------------------------------------------------------------------"
 sleep 3
@@ -122,6 +128,20 @@ Download_Wallpapers(){
 		mv -f "/media/fat/menu.png" "/media/fat/wallpapers/menu2.png" 2>/dev/null
 	fi
 
+
+	#Blacklist Handling	
+	if [ "$BLACKLIST" != "" ];then
+
+		BLACKLIST_ARRAY=($BLACKLIST)
+		
+		FILTER=()
+		for i in "${BLACKLIST_ARRAY[@]}"
+				do
+				:
+				FILTER+=$(echo -n "--exclude-glob *$i* ")
+		done
+	fi
+
     #Wallpapers Downloading
 	echo
 	echo "Checking Existing MiSTer Wallpapers by $ARTIST for Updates/New Files......"
@@ -129,13 +149,23 @@ Download_Wallpapers(){
 	
 		if [ $SELF_MANAGED == "True" ];then
     	#Sync Files
-    	lftp "$WALLPAPERS_URL" -e "mirror -p -P 25 --exclude-glob *DS_Store --ignore-time --verbose=1 --log="$LOGS_PATH/Wallpaper_Downloads.txt"; quit"
+
+		if [ "$BLACKLIST" != "" ];then
+			lftp "$WALLPAPERS_URL" -e "mirror -p -P 25 --exclude-glob *DS_Store $FILTER --ignore-time --verbose=1 --log="$LOGS_PATH/Wallpaper_Downloads.txt"; quit"
+		else
+	    	lftp "$WALLPAPERS_URL" -e "mirror -p -P 25 --exclude-glob *DS_Store --ignore-time --verbose=1 --log="$LOGS_PATH/Wallpaper_Downloads.txt"; quit"	
+		fi
 		fi
 
 		if [ $SELF_MANAGED != "True" ];then
     	#Sync Files
 		WALLPAPERS_URL="https://www.retrodriven.appboxes.co/MiSTerWallpapers/$SUB_FOLDER/"
-    	lftp "$WALLPAPERS_URL" -e "mirror -p -P 25 --exclude-glob *DS_Store --ignore-time --verbose=1 --log="$LOGS_PATH/Wallpaper_Downloads.txt"; quit"
+
+    	if [ "$BLACKLIST" != "" ];then
+			lftp "$WALLPAPERS_URL" -e "mirror -p -P 25 --exclude-glob *DS_Store $FILTER --ignore-time --verbose=1 --log="$LOGS_PATH/Wallpaper_Downloads.txt"; quit"
+		else
+	    	lftp "$WALLPAPERS_URL" -e "mirror -p -P 25 --exclude-glob *DS_Store --ignore-time --verbose=1 --log="$LOGS_PATH/Wallpaper_Downloads.txt"; quit"	
+		fi
 		fi
 
 	sleep 1
@@ -179,7 +209,7 @@ fi
 	#Ranny Snice
 	ARTIST="Ranny Snice"
 	SUB_FOLDER="snice"
-	Download_Wallpapers $SELF_MANAGED $ARTIST $SUB_FOLDER
+	Download_Wallpapers $SELF_MANAGED $ARTIST $SUB_FOLDER $BLACKLIST
 
 echo
 
