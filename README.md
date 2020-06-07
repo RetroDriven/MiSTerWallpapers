@@ -18,6 +18,12 @@ The purpose of this Script to to aid in Downloading the Amazing Collection of Mi
 * NOTE: If you have menu.jpg or menu.png in the root of your SD Card the Wallpapers will not work
 * NOTE: This Script will move the files above into /wallpapers for you automatically to avoid this issue
 
+## Wallpaper Blacklist ##
+* You can add Wallpapers that you do not want to Download to a Blacklist
+* Open the <b>Update_MiSTerWallpapers.ini</b> file and add in the Case Sensitive Filename Keywords
+* NOTE: The list is separated by space so only use part of the word if it's more than one word
+* EXAMPLE: BLACKLIST="Powerpuff Bowsette Vampire"
+
 ## Credits ##
 * <a href="https://twitter.com/RannySnice" target="_blank">Ranny Snice</a>
 * <a href="https://github.com/MiSTer-devel/Main_MiSTer/wiki" target="_blank">Sorgelig</a>
