@@ -99,10 +99,10 @@ esac
 #RetroDriven Updater Banner Function
 RetroDriven_Banner(){
 echo
-echo " ----------------------------------------------------------------"
-echo "|                    MiSTer Wallpapers v1.1                     |"
-echo "|                    powered by RetroDriven                     |"
-echo " ----------------------------------------------------------------"
+echo " ------------------------------------------------------------"
+echo "|                   MiSTer Wallpapers v1.1                   |"
+echo "|                   powered by RetroDriven                   |"
+echo " ------------------------------------------------------------"
 sleep 3
 }
 
