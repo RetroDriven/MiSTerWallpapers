@@ -105,17 +105,6 @@ echo "|                   powered by RetroDriven                   |"
 echo " ------------------------------------------------------------"
 sleep 3
 
-echo
-echo " ------------------------------------------------------------"
-echo "                   *** IMPORTANT NOTE ***                     "
-echo
-echo "   All RetroDriven Scripts will be End Of Life January 2021   "
-echo
-echo "   Please see my GitHub, Twitter, or Patreon for full details "                         
-echo " ------------------------------------------------------------"
-sleep 10
-echo
-
 }
 
 #Download Wallpapers Function
@@ -193,17 +182,6 @@ echo
 echo "================================================================"
 echo "                MiSTer Wallpapers are up to date!               "
 echo "================================================================"
-echo
-
-echo
-echo " ------------------------------------------------------------"
-echo "                   *** IMPORTANT NOTE ***                     "
-echo
-echo "   All RetroDriven Scripts will be End Of Life January 2021   "
-echo
-echo "   Please see my GitHub, Twitter, or Patreon for full details "                         
-echo " ------------------------------------------------------------"
-sleep 10
 echo
 
 }
