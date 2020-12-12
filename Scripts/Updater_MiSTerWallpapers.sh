@@ -194,6 +194,18 @@ echo "================================================================"
 echo "                MiSTer Wallpapers are up to date!               "
 echo "================================================================"
 echo
+
+echo
+echo " ------------------------------------------------------------"
+echo "                   *** IMPORTANT NOTE ***                     "
+echo
+echo "   All RetroDriven Scripts will be End Of Life January 2021   "
+echo
+echo "   Please see my GitHub, Twitter, or Patreon for full details "                         
+echo " ------------------------------------------------------------"
+sleep 10
+echo
+
 }
 
 #========= MAIN CODE =========
