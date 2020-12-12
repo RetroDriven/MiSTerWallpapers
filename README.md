@@ -1,17 +1,3 @@
-# IMPORTANT NOTE
-
-## Scripts End Of Life(January 2021) 
-
-The Good News: My Family will be growing by one more with a new Baby on the way soon! 
-
-The Bad News: Come January my Scripts will go EOL.
-
-TLDR:New Baby,Not enough time,I will be back at some point
-
-Full Details Below:
-
-<a href="https://www.patreon.com/posts/scripts-end-of-44945379">https://www.patreon.com/posts/scripts-end-of-44945379</a>
-
 # MiSTerWallpapers
 The purpose of this Script to to aid in Downloading the Amazing Collection of MiSTer Menu Wallpapers that Ranny Snice is creating for us all.
 
