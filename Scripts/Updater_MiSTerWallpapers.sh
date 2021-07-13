@@ -18,16 +18,17 @@
 # You can download the latest version of this script from:
 # https://github.com/RetroDriven/MiSTerWallpapers
 
+# v1.2 - Changed URLs to my own Domain 
 # v1.1 - Added BLACKLIST Option for Filtering out Wallpapers you wish to skip Downloading
 # v1.0 - Initial MiSTerWallpapers Script
 
 #=========   URL OPTIONS   =========
 
 #Main URL
-MAIN_URL="https://www.retrodriven.appboxes.co"
+MAIN_URL="https://retrodriven.com"
 
 #Wallpapers URL
-WALLPAPERS_URL="https://www.retrodriven.appboxes.co/MiSTerWallpapers/"
+WALLPAPERS_URL="https://misterwallpapers.retrodriven.com/"
 
 #=========   USER OPTIONS   =========
 
@@ -100,7 +101,7 @@ esac
 RetroDriven_Banner(){
 echo
 echo " ------------------------------------------------------------"
-echo "|                   MiSTer Wallpapers v1.1                   |"
+echo "|                   MiSTer Wallpapers v1.2                   |"
 echo "|                   powered by RetroDriven                   |"
 echo " ------------------------------------------------------------"
 sleep 3
@@ -128,7 +129,6 @@ Download_Wallpapers(){
 	if [ -f /media/fat/menu.png ]; then
 		mv -f "/media/fat/menu.png" "/media/fat/wallpapers/menu2.png" 2>/dev/null
 	fi
-
 
 	#Blacklist Handling	
 	if [ "$BLACKLIST" != "" ];then
@@ -160,7 +160,7 @@ Download_Wallpapers(){
 
 		if [ $SELF_MANAGED != "True" ];then
     	#Sync Files
-		WALLPAPERS_URL="https://www.retrodriven.appboxes.co/MiSTerWallpapers/$SUB_FOLDER/"
+		WALLPAPERS_URL="https://misterwallpapers.retrodriven.com/$SUB_FOLDER/"
 
     	if [ "$BLACKLIST" != "" ];then
 			lftp "$WALLPAPERS_URL" -e "mirror -p -P 25 --exclude-glob *DS_Store $FILTER --ignore-time --verbose=1 --log="$LOGS_PATH/Wallpaper_Downloads.txt"; quit"
@@ -172,8 +172,6 @@ Download_Wallpapers(){
 	sleep 1
     clear 	
 }
-
-
 
 #Footer Function
 Footer(){
