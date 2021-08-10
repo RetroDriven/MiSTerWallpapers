@@ -208,7 +208,7 @@ fi
 #Download Wallpapers
 	#Ranny Snice
 	ARTIST="Ranny Snice"
-	SUB_FOLDER="snice"
+	SUB_FOLDER="snice/LCD"
 	Download_Wallpapers $SELF_MANAGED $ARTIST $SUB_FOLDER $BLACKLIST
 
 echo
